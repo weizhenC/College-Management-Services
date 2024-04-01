@@ -1,0 +1,35 @@
+﻿@model CollegeManagementServices.Models.StaffTask
+
+<h2>Edit a Task</h2>
+<form asp-action="Edit">
+    <input type="hidden" asp-for="TaskId" />
+    <div class="form-group">
+        <label asp-for="Code"></label>
+        <input asp-for="Code" class="form-control" />
+        <span asp-validation-for="Code" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Location"></label>
+        <select asp-for="Location" class="form-control">
+            <option value="Online">Online</option>
+            <option value="Physical">Physical</option>
+            <option value="Hybrid">Hybrid</option>
+        </select>
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <select asp-for="Status" class="form-control">
+            <option value="Completed">Completed</option>
+            <option value="InProgress">In Progress</option>
+            <option value="NotStarted">Not Started</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

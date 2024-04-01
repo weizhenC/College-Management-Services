@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h2>Welcome to Gamer Page</h2>
+<partial name="_LoginPartial" />
+
+
+
+@if (User.IsInRole("Gamer"))
+{
+    <a href="~/TicTacToe/Index" target="_blank">Start the Game</a>
+}

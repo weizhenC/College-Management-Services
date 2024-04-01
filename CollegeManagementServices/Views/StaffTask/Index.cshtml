@@ -1,0 +1,32 @@
+﻿@model List<CollegeManagementServices.Models.StaffTask>
+
+    <h1>The Task List</h1>
+<a asp-action="Create">Create New</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model)
+        {
+            <tr>
+                <td>@task.Code</td>
+                <td>@task.Description</td>
+                <td>@task.Location</td>
+                <td>@task.Status</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@task.TaskId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@task.TaskId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
